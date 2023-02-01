@@ -51,7 +51,7 @@ public class Main {
 		var tSol = new TreeExercise();
 
 		fillTree();
-		System.out.println("Biggest: " + tSol.biggestNumber(bst) + " == 100?");
+		System.out.println("Biggest: " + tSol.biggestNumber(bst) + " == 1000?");
 		System.out.println("Summe aller Zahlen: " + tSol.sum(bst) + " == 1799?");
 		System.out.println("Durschnitt: " + tSol.average(bst) + " ~= 66.629?");
 	}
