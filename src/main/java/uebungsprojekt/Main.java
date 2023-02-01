@@ -22,7 +22,7 @@ public class Main {
 
 	private static void recursionSol () {
 		var sol = new RecursionExercise();
-		System.out.println("fibonacci: " + sol.fibonacci(6) + " == 21?");
+		System.out.println("fibonacci: " + sol.fibonacci(6) + " == 21 oder 34?");
 		System.out.println("summe zwischen: " + sol.sumBetween(2, 100) + " == 5049?");
 
 		System.out.println();
