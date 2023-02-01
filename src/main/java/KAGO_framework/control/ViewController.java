@@ -268,7 +268,6 @@ public class ViewController implements ActionListener, KeyListener, MouseListene
         double dtSeconds = (double)dt/1000;
         if ( dtSeconds == 0 ) dtSeconds = 0.01;
         // Führe Berechnungen und Aktualisierungen im Hauptobjekt aus
-        programController.updateProgram(dtSeconds);
         // Zeichne alle Objekte der aktuellen Szene
         scenes.get(currentScene).drawingPanel.repaint();
         // Aktualisiere SoundController, wenn vorhanden
