@@ -6,6 +6,7 @@ import uebungsprojekt.abiturklassen.Graph;
 import uebungsprojekt.abiturklassen.Vertex;
 import uebungsprojekt.data.Digit;
 import uebungsprojekt.exercises.GraphExercise;
+import uebungsprojekt.exercises.RecursionExercise;
 import uebungsprojekt.exercises.TreeExercise;
 
 public class Main {
@@ -20,7 +21,15 @@ public class Main {
     }
 
 	private static void recursionSol () {
+		var sol = new RecursionExercise();
+		System.out.println("fibonacci: " + sol.fibonacci(6) + " == 21?");
+		System.out.println("summe zwischen: " + sol.sumBetween(2, 100) + " == 5049?");
 
+		System.out.println();
+		int[] arr = {1, 2, 3, 4, 5};
+		sol.printRec(arr, 0);
+		sol.printBackwardsRec(arr, 0);
+		System.out.println("War die ausgabe \"12345\" und \"54321\"?");
 	}
 
 	private static void graphSol () {
@@ -30,10 +39,10 @@ public class Main {
 		var gSol = new GraphExercise();
 
 		g.setAllVertexMarks(false);
-		System.out.println("Tiefensuche: " + gSol.tiefenSuche(g,g.getVertices().getContent()));
+		System.out.println("Tiefensuche: " + gSol.tiefenSuche(g,g.getVertices().getContent()) + " == 125987364?");
 
 		g.setAllVertexMarks(false);
-		System.out.println("Breitensuche: " + gSol.breitenSuche(g));
+		System.out.println("Breitensuche: " + gSol.breitenSuche(g) + " == 124536978?");
 	}
 
 	private static void treeSol () {
@@ -42,8 +51,9 @@ public class Main {
 		var tSol = new TreeExercise();
 
 		fillTree();
-		System.out.println("Biggest: " + tSol.biggestNumber(bst));
-		System.out.println("Summe aller Zahlen: " + tSol.sum(bst));
+		System.out.println("Biggest: " + tSol.biggestNumber(bst) + " == 100?");
+		System.out.println("Summe aller Zahlen: " + tSol.sum(bst) + " == 1799?");
+		System.out.println("Durschnitt: " + tSol.average(bst) + " ~= 66.629?");
 	}
 
 
