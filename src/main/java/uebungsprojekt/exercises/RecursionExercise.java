@@ -20,4 +20,8 @@ public class RecursionExercise {
 	public void printBackwardsRec (int[] arr, int n) {
 		// TODO wie printRec aber mit dem letzten element zuerst
 	}
+
+	public void quicksort (int[] arr) {
+		// TODO implementiere quicksort in-place
+	}
 }

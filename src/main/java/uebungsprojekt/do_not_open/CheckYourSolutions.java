@@ -7,10 +7,10 @@ import uebungsprojekt.abiturklassen.List;
 import uebungsprojekt.data.Digit;
 import uebungsprojekt.exercises.GraphExercise;
 
-public class CheckYourSolutions extends GraphExercise {
+public class CheckYourSolutions {
 
 
-    public String tiefenSuche(Graph graph, Vertex vertex){
+    private static String tiefenSuche(Graph graph, Vertex vertex){
         if(!vertex.isMarked()) {
             vertex.setMark(true);
             String output = vertex.getID();
@@ -26,7 +26,7 @@ public class CheckYourSolutions extends GraphExercise {
     }
 
 
-    public String breitenSuche(Graph graph){
+    private static String breitenSuche(Graph graph){
         //Setup
         Vertex firstVertex = graph.getVertices().getContent();
         firstVertex.setMark(true);
@@ -55,38 +55,38 @@ public class CheckYourSolutions extends GraphExercise {
         return output;
     }
 
-	public int biggestNumber(BinarySearchTree<Digit> tree){
+	private static int biggestNumber(BinarySearchTree<Digit> tree){
 		if (tree.isEmpty()) {
 			return tree.getContent().getNumber();
 		}
 		return biggestNumber(tree.getRightTree());
 	}
 
-	public int sum(BinarySearchTree<Digit> tree){
+	private static int sum(BinarySearchTree<Digit> tree){
 		if (tree.isEmpty()) {
 			return 0;
 		}
 		return sum(tree.getLeftTree()) + tree.getContent().getNumber() + sum(tree.getRightTree());
 	}
 
-	public double average (BinarySearchTree<Digit> tree){
+	private static double average (BinarySearchTree<Digit> tree){
 		return sum(tree) / (double) size(tree);
 	}
 
-	public int size (BinarySearchTree<Digit> tree) {
+	private static int size (BinarySearchTree<Digit> tree) {
 		if (tree.isEmpty()) {
 			return 1;
 		}
 		return size(tree.getLeftTree()) + size(tree.getRightTree()) + 1;
 	}
 
-	public int fibonacci (int n) {
+	private static int fibonacci (int n) {
 		if (n < 2)
 			return 1;
 		return fibonacci(n - 1) + fibonacci(n - 2);
 	}
 
-	public int sumBetween (int a, int b) {
+	private static int sumBetween (int a, int b) {
 		if (a > b)
 			return 0;
 		return b + sumBetween(a, b - 1);
@@ -104,5 +104,39 @@ public class CheckYourSolutions extends GraphExercise {
 			return;
 		printBackwardsRec(arr, n + 1);
 		System.out.println(arr[n]);
+	}
+
+	private static void quicksort (int[] arr) {
+		quickSort(arr, 0, arr.length - 1);
+	}
+
+	private static void quickSort(int[] arr, int begin, int end) {
+		if (begin < end) {
+			int partitionIndex = partition(arr, begin, end);
+
+			quickSort(arr, begin, partitionIndex-1);
+			quickSort(arr, partitionIndex+1, end);
+		}
+	}
+
+	private static int partition(int[] arr, int begin, int end) {
+		int pivot = arr[end];
+		int i = (begin-1);
+
+		for (int j = begin; j < end; j++) {
+			if (arr[j] <= pivot) {
+				i++;
+
+				int swapTemp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = swapTemp;
+			}
+		}
+
+		int swapTemp = arr[i+1];
+		arr[i+1] = arr[end];
+		arr[end] = swapTemp;
+
+		return i+1;
 	}
 }

@@ -5,9 +5,12 @@ import uebungsprojekt.abiturklassen.Edge;
 import uebungsprojekt.abiturklassen.Graph;
 import uebungsprojekt.abiturklassen.Vertex;
 import uebungsprojekt.data.Digit;
+import uebungsprojekt.do_not_open.CheckYourSolutions;
 import uebungsprojekt.exercises.GraphExercise;
 import uebungsprojekt.exercises.RecursionExercise;
 import uebungsprojekt.exercises.TreeExercise;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -24,6 +27,10 @@ public class Main {
 		var sol = new RecursionExercise();
 		System.out.println("fibonacci: " + sol.fibonacci(6) + " == 21 oder 34?");
 		System.out.println("summe zwischen: " + sol.sumBetween(2, 100) + " == 5049?");
+
+		int[] sortingArr = {1, 5, 3, 4, 2, 8, 6, 7, 0};
+		sol.quicksort(sortingArr);
+		System.out.println("quicksort: " + Arrays.toString(sortingArr) + " == [0, 1, 2, 3, 4, 5, 6, 7, 8]?");
 
 		System.out.println();
 		int[] arr = {1, 2, 3, 4, 5};
