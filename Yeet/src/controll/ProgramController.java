@@ -36,7 +36,7 @@ public class ProgramController {
     }
 
     /*public void scanner(){
-        char erster, zweiter;
+        char erster, zweiter,eingabe;
         int pos = 0;
         while(eingabe.charAt(pos) != ´#´){
             erster = eingabe.charAt(pos);
